@@ -10,19 +10,23 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Main {
+    private Chain c1;
+
+
 
     public static void main(String[] args) {
         DispenseChain ATM = new DispenseChain();
-        Scanner input = new Scanner(System.in);
-
         while (true) {
-            System.out.print("Enter amount to dispense");
-            int amount = input.nextInt();
+            int amount = 0;
+            System.out.println("Enter amount to dispense");
+            Scanner input = new Scanner(System.in);
+            amount = input.nextInt();
             if (amount % 10 != 0) {
                 System.out.println("Amount should be in multiple of 10s.");
-            } else
-                // process the request
-                ATM.getDispenser().dispense(new Currency(amount));
+                return;
+            }
+            // process the request
+            ATM.getDispenser().dispense(new Currency(amount));
         }
 
     }
