@@ -21,8 +21,8 @@ public class Main {
             System.out.println("Enter amount to dispense");
             Scanner input = new Scanner(System.in);
             amount = input.nextInt();
-            if (amount % 10 != 0) {
-                System.out.println("Amount should be in multiple of 10s.");
+            if (amount % 5 != 0) {
+                System.out.println("Amount should be in multiple of 5s.");
                 return;
             }
             // process the request
